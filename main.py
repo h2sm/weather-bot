@@ -14,8 +14,14 @@ def get_api_key():
 def get_weather():
     key = get_api_key()
     city = get_city_name()
-    url = "api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + key
+    url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" + "&appid=" + key
     resp = requests.get(url)
+    if resp.status_code == 200:
+        parse_response(resp)
+
+
+def parse_response(resp):
+    print('e')
 
 
 if __name__ == '__main__':
