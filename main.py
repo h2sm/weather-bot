@@ -1,6 +1,6 @@
 import requests
 import KeyHolder
-import json
+import TelegramBotHandler
 
 
 def get_city_name():
@@ -44,12 +44,7 @@ def parse_response(resp):
             max_temp = main_data.get("temp_max")
         if i == 'name':
             city_name = json_data[i]
-    print(city_name + main_weather)
-    print(temp)
-    print(min_temp)
-    print(max_temp)
-    print(lon)
-    print(lat)
+
 
 if __name__ == '__main__':
     get_weather()
